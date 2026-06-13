@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psiholog Clinician Teodosescu Irina-Mihaela | Cabinet Individual de Psihologie</title>
+    
+    <!-- Google Fonts: Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- VARIABLE ȘI PALETĂ CULORI --- */
+        :root {
+            --pink-powder: #F9E4E4;
+            --mint-green: #E8F5F0;
+            --mint-dark: #3A7D67;
+            --warm-white: #FAFAFA;
+            --soft-blue: #E3EDF7;
+            --text-dark: #2C3E50;
+            --text-muted: #5A6B7C;
+            --accent-blue: #4A90E2;
+            --white: #FFFFFF;
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04);
+            --shadow-hover: 0 15px 35px rgba(58, 125, 103, 0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+
+        /* --- RESET ȘI BAZĂ --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--warm-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--mint-dark);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-style: none;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- NAVBAR --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            color: var(--mint-dark);
+            font-size: 0.9rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--mint-dark);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--mint-dark);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background-color: var(--text-dark);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* --- HERO SECTION --- */
+        #home {
+            padding: 180px 20px 100px;
+            background: linear-gradient(135deg, var(--mint-green) 0%, var(--pink-powder) 100%);
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            background-color: var(--white);
+            color: var(--mint-dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--mint-dark);
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 20px rgba(58, 125, 103, 0.3);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--white);
+            color: var(--mint-dark);
+            border-color: var(--mint-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(58, 125, 103, 0.2);
+        }
+
+        /* --- DESPRE MINE --- */
+        .about-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .about-wrapper {
+                grid-template-columns: 1fr 1.2fr;
+            }
+        }
+
+        .about-image-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .about-placeholder {
+            width: 100%;
+            max-width: 400px;
+            height: 480px;
+            background-color: var(--pink-powder);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            box-shadow: var(--shadow-soft);
+            border: 4px solid var(--white);
+            position: relative;
+        }
+
+        .about-placeholder svg {
+            width: 80px;
+            height: 80px;
+            fill: var(--mint-dark);
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+
+        .about-placeholder p {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .about-text .experience-badge {
+            display: inline-block;
+            background-color: var(--mint-green);
+            color: var(--mint-dark);
+            padding: 5px 15px;
+            border-radius: 6px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* --- SERVICII --- */
+        #servicii {
+            background-color: #F4F9F6;
+            max-width: 100%;
+        }
+
+        .services-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.01);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--mint-green);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        /* --- DE CE EU (CREDIBILITATE) --- */
+        .credibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .credibility-item {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: var(--transition);
+        }
+
+        .credibility-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .credibility-icon-box {
+            background-color: var(--soft-blue);
+            padding: 12px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .credibility-item:nth-child(even) .credibility-icon-box {
+            background-color: var(--pink-powder);
+        }
+
+        .credibility-item:nth-child(3n) .credibility-icon-box {
+            background-color: var(--mint-green);
+        }
+
+        .credibility-icon-box svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--text-dark);
+        }
+
+        .credibility-info h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .credibility-info p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* --- CUM FUNCȚIONEAZĂ --- */
+        #cum-functioneaza {
+            background-color: #FAF5F5;
+            max-width: 100%;
+        }
+
+        .steps-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .step-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--mint-dark);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin: 0 auto 25px;
+            box-shadow: 0 5px 15px rgba(58, 125, 103, 0.3);
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* --- FAQ --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.01);
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 22px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            user-select: none;
+            color: var(--text-dark);
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            font-weight: 400;
+            transition: transform 0.3s ease;
+            color: var(--mint-dark);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #FCFCFC;
+        }
+
+        .faq-answer p {
+            padding: 0 30px 22px 30px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            border-top: 1px solid #F5F5F5;
+            padding-top: 15px;
+        }
+
+        .faq-item.active {
+            border-color: var(--mint-green);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* --- CONTACT ȘI PROGRAMARE --- */
+        #contact {
+            background-color: var(--white);
+            max-width: 100%;
+        }
+
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1.2fr;
+            }
+        }
+
+        .contact-info-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            background-color: var(--mint-green);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-text-box h4 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .contact-text-box p, .contact-text-box a {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .contact-text-box a:hover {
+            color: var(--mint-dark);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .social-btn {
+            background-color: #F0F4F8;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            background-color: var(--text-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            height: 250px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #E5E9F0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .map-placeholder svg {
+            width: 50px;
+            height: 50px;
+            fill: var(--mint-dark);
+            margin-bottom: 15px;
+        }
+
+        .btn-map {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--text-dark);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #DDD;
+            transition: var(--transition);
+        }
+
+        .btn-map:hover {
+            background-color: var(--mint-dark);
+            color: var(--white);
+            border-color: var(--mint-dark);
+        }
+
+        /* FORMULAR DE CONTACT (AFISAT, NEFUNCTIONAL) */
+        .contact-form-container {
+            background-color: #FDFDFD;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #F0F0F0;
+        }
+
+        .contact-form-container h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 20px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            background-color: #F7F9FA;
+            border: 1px solid #E4E8EB;
+            border-radius: 12px;
+            outline: none;
+            transition: var(--transition);
+            color: var(--text-dark);
+        }
+
+        .form-control:focus {
+            background-color: var(--white);
+            border-color: var(--mint-dark);
+            box-shadow: 0 0 0 4px rgba(58, 125, 103, 0.1);
+        }
+
+        textarea.form-control {
+            resize: none;
+            height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--mint-dark);
+            color: var(--white);
+            border: none;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(58, 125, 103, 0.2);
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background-color: #2F6654;
+            transform: translateY(-1px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p strong {
+            color: var(--white);
+        }
+
+        /* --- FLOTANTE --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--white);
+        }
+
+        /* --- COOKIE BANNER GDPR --- */
+        .gdpr-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.08);
+            z-index: 2000;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease-in-out;
+            transform: translateY(100%);
+        }
+
+        .gdpr-banner.show {
+            transform: translateY(0);
+        }
+
+        @media (min-width: 768px) {
+            .gdpr-banner {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 20px 40px;
+                gap: 40px;
+            }
+        }
+
+        .gdpr-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 900px;
+            text-align: justify;
+        }
+
+        .gdpr-buttons {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .btn-gdpr-accept {
+            background-color: var(--mint-dark);
+            color: var(--white);
+            border: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-gdpr-accept:hover {
+            background-color: #2F6654;
+        }
+
+        .btn-gdpr-reject {
+            background-color: #E4E8EB;
+            color: var(--text-dark);
+            border: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-gdpr-reject:hover {
+            background-color: #D6DCF0;
+        }
+
+        /* --- ANIMAȚII SUBTILE (FADE-IN LA SCROLL) --- */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- RESPONSIVE / MOBILE MENIU --- */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                gap: 35px;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+
+            .nav-menu.open {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.open span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .hamburger.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.open span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -7px);
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-text">
+                Teodosescu Irina-Mihaela
+                <span>Psiholog Clinician | Cabinet Individual</span>
+            </div>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Acasă</a></li>
+                    <li><a href="#despre-mine" class="nav-link">Despre mine</a></li>
+                    <li><a href="#servicii" class="nav-link">Servicii</a></li>
+                    <li><a href="#de ce eu" class="nav-link" id="link-credibilitate">De ce eu?</a></li>
+                    <li><a href="#cum-functioneaza" class="nav-link">Cum funcționează</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (ACASĂ) -->
+    <section id="home">
+        <div class="hero-content">
+            <span class="hero-badge">Peste 20 de ani de experiență dedicată copiilor</span>
+            <h1>Sprijin specializat pentru pași siguri în dezvoltarea copilului tău</h1>
+            <p>Intervenții clinice calde, adaptate cu răbdare și profesionalism nevoilor unice ale copiilor cu tulburări de dezvoltare.</p>
+            <a href="#contact" class="btn-primary">Programează o consultație</a>
+        </div>
+    </section>
+
+    <!-- DESPRE MINE -->
+    <section id="despre-mine" class="fade-in-element">
+        <h2 class="section-title">Despre mine</h2>
+        <p class="section-subtitle">O vocație transformată în profesie, ghidată de empatie și rigoare științifică.</p>
+        
+        <div class="about-wrapper">
+            <div class="about-image-container">
+                <img src="poza inna halat.jpeg" alt="Teodosescu Irina-Mihaela" style="width: 100%; max-width: 400px; height: 480px; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow-soft); border: 4px solid var(--white);">
+            </div>
+            <div class="about-text">
+                <h3>Teodosescu Irina-Mihaela</h3>
+                <span class="experience-badge">Activitate profesională din 2003</span>
+                <p>Sunt psiholog clinician pasionat, dedicat în totalitate sprijinirii copiilor cu nevoi speciale și familiilor acestora. Parcursul meu profesional însumează peste 20 de ani în domeniul asistenței sociale, educației speciale și psihologiei clinice, perioadă în care am înțeles că fiecare copil are propriul ritm de creștere și o valoare infinită care merită descoperită.</p>
+                <p>O parte semnificativă a experienței mele s-a clădit prin lucrul direct cu copii cu dizabilități și nevoi complexe în cadrul DGASPC Gorj. Această experiență profundă m-a determinat ca în anul 2022 să înființez Cabinetul Individual de Psihologie, cu scopul de a oferi un spațiu terapeutic sigur, cald și optimizat din punct de vedere clinic pentru micuții pacienți.</p>
+                <p>Fiecare intervenție pe care o realizez pornește de la premisa că o evaluare corectă și o terapie timpurie timbrată de multă blândețe pot schimba radical traiectoria de viață a unui copil cu provocări în dezvoltare.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICII (4 CARDURI DISTINCTE) -->
+    <section id="servicii" class="fade-in-element">
+        <div class="services-inner">
+            <h2 class="section-title">Servicii oferite</h2>
+            <p class="section-subtitle">Abordări terapeutice integrate pentru o evoluție armonioasă.</p>
+            
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <span class="service-icon">🧸</span>
+                    <h3>Terapie individuală copii</h3>
+                    <p>Ședințe personalizate structurate special pentru copii care se confruntă cu tulburări de dezvoltare, începând de la vârste foarte fragede. Ne concentrăm pe stimularea abilităților cognitive, emoționale și de adaptare.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <span class="service-icon">📋</span>
+                    <h3>Evaluare psihologică & diagnostic</h3>
+                    <p>Proces complex de psihodiagnostic, observare clinică și aplicare de probe specifice în conformitate cu standardele DSM-V, oferind o imagine clară asupra profilului psihologic și nevoilor copilului.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <span class="service-icon">🧩</span>
+                    <h3>Terapie ABA (autism)</h3>
+                    <p>Intervenție comportamentală timpurie, intensivă și riguros ghidată, adresată copiilor din spectrul autist (TSA) și altor tulburări de dezvoltare, axată pe formarea comportamentelor adaptative și reducerea celor problematice.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <span class="service-icon">🗣️</span>
+                    <h3>Logopedie clinică</h3>
+                    <p>Activități axate pe corectarea, dezvoltarea și optimizarea limbajului și a comunicării funcționale la copiii cu tulburări din spectrul autist (TSA), întârzieri în dezvoltarea vorbirii sau alte afecțiuni corelate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DE CE EU? (CREDIBILITATE) -->
+    <section id="de-ce-eu" class="fade-in-element">
+        <h2 class="section-title">De ce eu?</h2>
+        <p class="section-subtitle">Garanția unei pregătiri profesionale continue și a unei vaste experiențe practice în domeniu.</p>
+        
+        <div class="credibility-grid">
+            <!-- Punctul 1 -->
+            <div class="credibility-item">
+                <div class="credibility-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                </div>
+                <div class="credibility-info">
+                    <h4>Acreditare și Statut Legal</h4>
+                    <p>Psiholog clinician atestat de Colegiul Psihologilor din România, cu cabinet individual înregistrat în mod oficial.</p>
+                </div>
+            </div>
+            <!-- Punctul 2 -->
+            <div class="credibility-item">
+                <div class="credibility-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+                </div>
+                <div class="credibility-info">
+                    <h4>Peste 20 de ani în Protecție Specială</h4>
+                    <p>Vastă experiență dobândită în lucrul direct cu copii cu handicap și nevoi speciale în cadrul DGASPC Gorj.</p>
+                </div>
+            </div>
+            <!-- Punctul 3 -->
+            <div class="credibility-item">
+                <div class="credibility-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5.49 12c.66.36 1.4.57 2.19.57.81 0 1.55-.22 2.21-.59L12 13.1l6.11-3.33v3.74c0 1.95-1.12 3.69-2.87 4.47l-3.24 1.44-3.24-1.44C7.12 17.2 6 15.46 6 13.51v-1.51z"/></svg>
+                </div>
+                <div class="credibility-info">
+                    <h4>Masterat în Psihologie Clinică</h4>
+                    <p>Absolventă a programului de Master în Psihologie Clinică – Evaluare și Intervenție organizat de Universitatea din Pitești.</p>
+                </div>
+            </div>
+            <!-- Punctul 4 -->
+            <div class="credibility-item">
+                <div class="credibility-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                </div>
+                <div class="credibility-info">
+                    <h4>Certificare Terapie ABA</h4>
+                    <p>Pregătire specializată în Intervenția comportamentală timpurie în TSA, certificată prin ABA Skills în anul 2022.</p>
+                </div>
+            </div>
+            <!-- Punctul 5 -->
+            <div class="credibility-item">
+                <div class="credibility-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                </div>
+                <div class="credibility-info">
+                    <h4>Integrare Senzorială TAIR</h4>
+                    <p>Certificare în Therapy for Autistic Integration and Recovery (TAIR) obținută în 2024, esențială pentru reglarea senzorială.</p>
+                </div>
+            </div>
+            <!-- Punctul 6 -->
+            <div class="credibility-item">
+                <div class="credibility-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.06-.86 1.07-.46 2.25-.75 3.51-.83.43.86 1.32 1.44 2.35 1.44.87 0 1.64-.43 2.12-1.11.48.68 1.25 1.11 2.12 1.11 1.02 0 1.91-.57 2.35-1.43 1.27.07 2.45.36 3.52.82.04.28.06.57.06.86 0 4.41-3.59 8-8 8z"/></svg>
+                </div>
+                <div class="credibility-info">
+                    <h4>Logopedie Practică</h4>
+                    <p>Certificare oficială în tehnici și procedee de logopedie practică, absolvită în anul 2018.</p>
+                </div>
+            </div>
+            <!-- Punctul 7 -->
+            <div class="credibility-item">
+                <div class="credibility-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                </div>
+                <div class="credibility-info">
+                    <h4>Evaluare Clinică DSM-V</h4>
+                    <p>Stăpânirea metodelor avansate și a tehnicilor de psihodiagnostic destinate deopotrivă copiilor și adulților.</p>
+                </div>
+            </div>
+            <!-- Punctul 8 -->
+            <div class="credibility-item">
+                <div class="credibility-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+                </div>
+                <div class="credibility-info">
+                    <h4>Formare Continuă Activă</h4>
+                    <p>Participant activ la conferințele naționale ePSY, cursuri centrate pe reziliență, prevenirea abuzului și dependențe.</p>
+                </div>
+            </div>
+            <!-- Punctul 9 -->
+            <div class="credibility-item">
+                <div class="credibility-icon-box">
+                    <svg viewBox="0 0 24 24"><path d="M16.5 12c1.38 0 2.49-1.11 2.49-2.5S17.88 7 16.5 7C15.12 7 14 8.11 14 9.5s1.12 2.5 2.5 2.5zM9 11c1.66 0 2.99-1.34 2.99-3S10.66 5 9 5 6 6.34 6 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm7.5 1c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                </div>
+                <div class="credibility-info">
+                    <h4>Pedagog de Recuperare & Formator</h4>
+                    <p>Dublă atestare care îmi permite să dezvolt programe educaționale compensatorii eficiente și să ghidez alte cadre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUM FUNCȚIONEAZĂ (3 PAȘI SIMPLI) -->
+    <section id="cum-functioneaza" class="fade-in-element">
+        <div class="steps-inner">
+            <h2 class="section-title">Cum funcționează?</h2>
+            <p class="section-subtitle">Un proces clar, transparent și predictibil pentru confortul întregii familii.</p>
+            
+            <div class="steps-grid">
+                <!-- Pasul 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Contact inițial</h3>
+                    <p>Mă contactați telefonic, prin e-mail sau WhatsApp. Stabilim împreună o zi și un interval orar convenabil pentru prima voastră vizită la cabinet.</p>
+                </div>
+                <!-- Pasul 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Evaluare clinică</h3>
+                    <p>În cadrul primelor ședințe, realizez o observare atentă și aplic tehnici specifice de psihodiagnostic pentru a identifica nivelul actual și nevoile copilului.</p>
+                </div>
+                <!-- Pasul 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Intervenție / Terapie</h3>
+                    <p>Creăm un plan terapeutic complet personalizat (ABA, logopedie, stimulare cognitivă) și începem ședințele propriu-zise, adaptate ritmului nativ al copilului.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (ÎNTREBĂRI FRECVENTE) -->
+    <section id="faq" class="fade-in-element">
+        <h2 class="section-title">Întrebări frecvente</h2>
+        <p class="section-subtitle">Răspunsuri rapide la principalele preocupări și dileme ale părinților.</p>
+        
+        <div class="faq-container">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    Cum îmi dau seama dacă micuțul meu are nevoie de o evaluare psihologică?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Semnele pot varia în funcție de vârstă. În general, este recomandat să apelați la un specialist dacă observați lipsa contactului vizual, întârzieri în apariția vorbirii, dificultăți majore de adaptare în colectivitate, reacții emoționale neobișnuit de intense (anxietate, furie greu de gestionat) sau comportamente repetitive și stereotipe.</p>
+                </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    De la ce vârstă pot aduce copilul la cabinet pentru consult?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Copilul poate fi adus încă de la vârste foarte fragede (12-18 luni), dacă există suspiciuni sau semne timpurii legate de întârzieri în dezvoltarea neuropsihică ori în spectrul autist. Intervenția timpurie reprezintă întotdeauna cel mai bun aliat pentru o recuperare eficientă.</p>
+                </div>
+            </div>
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    Cât durează o ședință obișnuită de evaluare sau terapie?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Durata standard a unei ședințe variază de regulă între 45 și 50 de minute. Acest interval este optim pentru a menține atenția și cooperarea copilului active, fără a genera oboseală excesivă sau suprasolicitare senzorială.</p>
+                </div>
+            </div>
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    Cât de des trebuie să venim la cabinet pentru rezultate vizibile?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Frecvența se stabilește strict individual, după finalizarea etapei inițiale de evaluare. Pentru abordări precum terapia ABA, frecvența săptămânală crescută este esențială, în timp ce pentru alte tipuri de intervenții pot fi suficiente 1-2 ședințe pe săptămână.</p>
+                </div>
+            </div>
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    Care este rolul familiei în planul de recuperare al copilului?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Implicarea familiei este absolut crucială. Tehnicile, regulile și modalitățile de comunicare exersate în cabinet trebuie continuate și generalizate acasă, în mediul cotidian al copilului. Colaborarea strânsă dintre terapeut și părinți accelerează progresele micuțului.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT ȘI PROGRAMARE -->
+    <section id="contact" class="fade-in-element">
+        <div class="contact-inner">
+            <h2 class="section-title">Contact & Programări</h2>
+            <p class="section-subtitle">Sunt aici pentru a vă răspunde la întrebări și a programa o primă întâlnire.</p>
+            
+            <div class="contact-grid">
+                <!-- Informații stânga -->
+                <div class="contact-info-panel">
+                    <div class="contact-details">
+                        <div class="contact-method">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text-box">
+                                <h4>Telefon</h4>
+                                <p><a href="tel:0769845137">0769.845.137</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-text-box">
+                                <h4>E-mail</h4>
+                                <p><a href="mailto:irina.teodosescu23@gmail.com">irina.teodosescu23@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text-box">
+                                <h4>Adresă Cabinet</h4>
+                                <p>Strada Ecaterina Teodoroiu, numărul 1, bloc 1, scara 2</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100094253542556" target="_blank" class="social-btn">
+                            <span>📘</span> Facebook
+                        </a>
+                    </div>
+
+                    <!-- Harta Integrată (Placeholder Buton conform cerinței) -->
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <p style="font-weight:700; font-size:1rem; color:var(--text-dark);">Vizualizare Locație Cabinet</p>
+                            <p style="font-size:0.85rem; color:var(--text-muted);">Strada Ecaterina Teodoroiu, numărul 1, bloc 1, scara 2</p>
+                            <a href="https://maps.google.com" target="_blank" class="btn-map">Deschide în Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formular dreapta -->
+                <div class="contact-form-container">
+                    <h3>Trimite un mesaj</h3>
+                    <form onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label for="name">Nume Părinte</label>
+                            <input type="text" id="name" class="form-control" placeholder="Introduceți numele dumneavoastră">
+                        </div>
+                        <div class="form-group">
+                            <label for="child-age">Vârstă Copil</label>
+                            <input type="text" id="child-age" class="form-control" placeholder="Ex: 4 ani">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Număr de Telefon</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="0769 845 137">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesaj sau scurtă descriere a motivului vizitei</label>
+                            <textarea id="message" class="form-control" placeholder="Cum vă pot ajuta?"></textarea>
+                        </div>
+                        <button type="button" class="btn-submit">Trimite Solicitarea</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <strong>Teodosescu Irina-Mihaela</strong> - Cabinet Individual de Psihologie. Toate drepturile rezervate.</p>
+    </footer>
+
+    <!-- BUTON WHATSAPP FLOTANT -->
+    <a href="https://wa.me/40769845137" class="whatsapp-float" target="_blank" title="Contactează-ne pe WhatsApp">
+        <svg viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <!-- COOKIE BANNER GDPR -->
+    <div class="gdpr-banner" id="gdprBanner">
+        <div class="gdpr-text">
+            Acest site folosește fișiere de tip cookie de bază pentru a vă asigura o experiență optimă de navigare. Prin continuarea navigării sau prin apăsarea butonului „Acceptă”, vă exprimați acordul cu privire la stocarea acestora.
+        </div>
+        <div class="gdpr-buttons">
+            <button class="btn-gdpr-reject" id="gdprReject">Respinge</button>
+            <button class="btn-gdpr-accept" id="gdprAccept">Acceptă</button>
+        </div>
+    </div>
+
+    <!-- CODE LOGIC (JAVASCRIPT) -->
+    <script>
+        // --- MENIU MOBIL (HAMBURGER) ---
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        hamburgerMenu.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerMenu.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+
+        // --- SMOOTH SCROLL ACTIVE STATE ---
+        const sections = document.querySelectorAll('section');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                // Ajustare pentru id-ul "de-ce-eu" care are cratimă, dar în nav are alt text
+                let hrefAttr = link.getAttribute('href').substring(1);
+                if(hrefAttr === 'de%20ce%20eu' || hrefAttr === 'de ce eu') {
+                    hrefAttr = 'de-ce-eu';
+                }
+                if (hrefAttr === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // REPARARE LINK NAVBAR PENTRU ID-UL CU CRATIMĂ
+        document.getElementById('link-credibilitate').addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('de-ce-eu').scrollIntoView({ behavior: 'smooth' });
+        });
+
+
+        // --- FAQ ACCORDION ---
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const answer = question.nextElementSibling;
+                
+                // Închide celelalte dacă sunt deschise
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+
+                // Toggle elementul curent
+                item.classList.toggle('active');
+                if (item.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+
+        // --- BANNER GDPR ---
+        const gdprBanner = document.getElementById('gdprBanner');
+        const gdprAccept = document.getElementById('gdprAccept');
+        const gdprReject = document.getElementById('gdprReject');
+
+        window.addEventListener('DOMContentLoaded', () => {
+            // Verifică dacă utilizatorul a făcut deja o alegere
+            if (!localStorage.getItem('gdpr_choice')) {
+                setTimeout(() => {
+                    gdprBanner.classList.add('show');
+                }, 1000); // Apare după 1 secundă
+            }
+        });
+
+        gdprAccept.addEventListener('click', () => {
+            localStorage.setItem('gdpr_choice', 'accepted');
+            gdprBanner.classList.remove('show');
+        });
+
+        gdprReject.addEventListener('click', () => {
+            localStorage.setItem('gdpr_choice', 'rejected');
+            gdprBanner.classList.remove('show');
+        });
+
+        // --- ANIMAȚIE LA SCROLL (FADE IN) ---
+        const fadeInElements = document.querySelectorAll('.fade-in-element');
+
+        const handleScrollAnimation = () => {
+            fadeInElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < window.innerHeight - elementVisible) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScrollAnimation);
+        // Rulăm o dată la încărcare pentru elementele deja vizibile
+        window.addEventListener('load', handleScrollAnimation);
+    </script>
+</body>
+</html>
